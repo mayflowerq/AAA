@@ -1,0 +1,18 @@
+Команда в консоли:
+
+PS C:\Projects\Python\HW_class_9>  python -m doctest -v issue-01.py
+
+Результат:
+
+Trying:
+    encode('SOS') # doctest: +ELLIPSIS
+Expecting:
+    '... --- ...'
+ok
+1 items had no tests:
+    issue-01
+1 items passed all tests:
+   1 tests in issue-01.encode
+1 tests in 2 items.
+1 passed and 0 failed.
+Test passed.
