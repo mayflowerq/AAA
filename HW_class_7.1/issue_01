@@ -1,0 +1,22 @@
+import json
+
+
+class Advert:
+	def __init__(self, mapping):
+		self.__dict__ = mapping
+
+
+
+
+
+
+lesson_str = '''{"title": "python",
+"price": 0,
+"location": 1
+}'''
+
+lesson = json.loads(lesson_str)
+lesson_ad = Advert(lesson)
+
+print(lesson_ad.location)
+
