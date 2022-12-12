@@ -6,7 +6,6 @@ class Color:
 	def __init__(self, red: int = 0, green: int = 0, blue: int = 0):
 		if not (0 <= red <= 255 and 0 <= green <= 255 and 0 <= blue <= 255):
 			raise ValueError('Incorrect input')
-
 		self.rgb = [red, green, blue]
 
 	def __str__(self):
@@ -22,7 +21,8 @@ class Color:
 		return self.rgb == other.rgb
 
 	def __add__(self, other):
-		return Color(min(255, self.rgb[0] + other.rgb[0]), min(255, self.rgb[1] + other.rgb[1]), min(255, self.rgb[2] + other.rgb[2]))
+		return Color(min(255, self.rgb[0] + other.rgb[0]), min(255, self.rgb[1] + 
+					other.rgb[1]), min(255, self.rgb[2] + other.rgb[2]))
 
 
 if __name__ == '__main__':
