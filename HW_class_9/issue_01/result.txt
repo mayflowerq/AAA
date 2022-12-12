@@ -1,0 +1,23 @@
+ДЛЯ ДОКТЕСТА:
+Команда в консоли:
+PS C:\Akademia_Avito\Питон\HW_zanyatie_9\issue-01> python -m doctest -o NORMALIZE_WHITESPACE -v encode_doctest.py
+
+Результат:
+Trying:
+    encode('SOS') # doctest: +ELLIPSIS
+Expecting:
+    '... --- ...'
+ok
+1 items had no tests:
+    encode_doctest
+1 items passed all tests:
+   1 tests in encode_doctest.encode
+1 tests in 2 items.
+1 passed and 0 failed.
+Test passed.
+
+ДЛЯ ТЕСТА С ИСКЛЮЧЕНИЕМ:
+Команда в консоли:
+python test_encode_exception.py
+
+Результат:
