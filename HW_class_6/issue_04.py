@@ -17,7 +17,6 @@ class TfidfTransformer:
 			return []
 		idf_vector = []
 		all_documents = len(count_matrix)
-
 		for term in range(len(count_matrix[0])):
 			docs_with_term = 0
 			for i in range(all_documents):
@@ -31,14 +30,17 @@ class TfidfTransformer:
 		matrix = self.tf_transform(count_matrix)
 		fit_matrix = []
 		for row in matrix:
-			fit_matrix.append([round(tf * idf, 3) for tf, idf in zip (row, vector)])
+			fit_matrix.append([round(tf * idf, 3) for tf, idf in zip(row, vector)])
 		return fit_matrix
 
 
-count_matrix = [
-	[1, 1, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0],
-	[0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1]
-]
-transformer = TfidfTransformer()
-tfidf_matrix = transformer.fit_transform(count_matrix)
-print(tfidf_matrix)
+if __name__ == '__main__':
+	count_matrix = [
+		[1, 1, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+		[0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1]
+	]
+	transformer = TfidfTransformer()
+	tfidf_matrix = transformer.fit_transform(count_matrix)
+	assert tfidf_matrix == [[0.2, 0.2, 0.286, 0.2, 0.2, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+							[0.0, 0.0, 0.143, 0.0, 0.0, 0.0, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2]]
+	print(tfidf_matrix)
