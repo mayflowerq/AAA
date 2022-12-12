@@ -1,0 +1,35 @@
+ДЛЯ UNITTEST.MOCK:
+Команда в консоли:
+PS C:\Akademia_Avito\Питон\HW_zanyatie_9\issue_05> python -m unittest -v test_what_is_year_now_unit.py
+
+
+Результат:
+test_what_is_year_now (test_what_is_year_now_unit.TestWhatIsYearNow) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK
+
+ДЛЯ ПРОВЕРКИ ПОКРЫТИЯ КОДА ТЕСТАМИ:
+Команды в консоли:
+PS C:\Akademia_Avito\Питон\HW_zanyatie_9\issue_05> python -m pytest --cov  .  --cov-report html  (ДЛЯ HTML ОТЧЕТА)
+PS C:\Akademia_Avito\Питон\HW_zanyatie_9\issue_05> python -m pytest -q test_coverage.py --cov=what_is_year_now
+(ДЛЯ ОТЧЕТА В КОНСОЛИ)
+
+
+Результат:
+.                                                                                                                                                                                                                                   [100%]
+
+---------- coverage: platform win32, python 3.10.0-final-0 -----------
+Name                  Stmts   Miss  Cover
+-----------------------------------------
+what_is_year_now.py      23      6    74%
+-----------------------------------------
+TOTAL                    23      6    74%
+
+(ОТЧЕТ В КОНСОЛИ ↑ )
+
+HTML ОТЧЕТ ЛЕЖИТ В ДИРЕКТОРИИ HTMLCOV В ПАПКЕ ISSUE_05
+
+
