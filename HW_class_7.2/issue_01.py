@@ -7,5 +7,6 @@ class Pokemon:
 		return f'{self.name}/{self.poketype}'
 
 
-bulbasaur = Pokemon(name='Bulbasaur', poketype='grass')
-print(bulbasaur)
+if __name__ == '__main__':
+	bulbasaur = Pokemon(name='Bulbasaur', poketype='grass')
+	print(bulbasaur)
