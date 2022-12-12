@@ -53,7 +53,6 @@ class TfidfTransformer:
 			return []
 		idf_vector = []
 		all_documents = len(count_matrix)
-
 		for term in range(len(count_matrix[0])):
 			docs_with_term = 0
 			for i in range(all_documents):
@@ -81,11 +80,16 @@ class TfidfVectorizer(CountVectorizer):
 		return self.tf_idf.fit_transform(count_matrix)
 
 
-corpus = [
-	'Crock Pot Pasta Never boil pasta again',
-	'Pasta Pomodoro Fresh ingredients Parmesan to taste'
-]
-vectorizer = TfidfVectorizer()
-tfidf_matrix = vectorizer.fit_transform(corpus)
-print(vectorizer.get_feature_names())
-print(tfidf_matrix)
+if __name__ == '__main__':
+	corpus = [
+		'Crock Pot Pasta Never boil pasta again',
+		'Pasta Pomodoro Fresh ingredients Parmesan to taste'
+	]
+	vectorizer = TfidfVectorizer()
+	tfidf_matrix = vectorizer.fit_transform(corpus)
+	assert vectorizer.get_feature_names() == ['crock', 'pot', 'pasta', 'never', 'boil', 'again',
+										'pomodoro', 'fresh', 'ingredients', 'parmesan', 'to', 'taste']
+	assert tfidf_matrix == [[0.2, 0.2, 0.286, 0.2, 0.2, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+							[0.0, 0.0, 0.143, 0.0, 0.0, 0.0, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2]]
+	print(vectorizer.get_feature_names())
+	print(tfidf_matrix)
