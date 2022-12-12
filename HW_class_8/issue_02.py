@@ -6,7 +6,6 @@ class Color:
 	def __init__(self, red: int = 0, green: int = 0, blue: int = 0):
 		if not (0 <= red <= 255 and 0 <= green <= 255 and 0 <= blue <= 255):
 			raise ValueError('Incorrect input')
-
 		self.rgb = [red, green, blue]
 
 	def __str__(self):
