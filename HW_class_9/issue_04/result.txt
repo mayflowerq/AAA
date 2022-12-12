@@ -1,0 +1,15 @@
+Команда в консоли:
+PS C:\Akademia_Avito\Питон\HW_zanyatie_9\issue_04> python -m pytest -v test_encode.py
+
+
+Результат:
+platform win32 -- Python 3.10.0, pytest-7.2.0, pluggy-1.0.0 -- C:\Users\Arsenii\AppData\Local\Programs\Python\Python310\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Akademia_Avito\Питон\HW_zanyatie_9\issue_04
+collected 5 items
+
+test_encode.py::test_seqw PASSED                                                                                                                                                                                                    [ 20%]
+test_encode.py::test_two PASSED                                                                                                                                                                                                     [ 40%]
+test_encode.py::test_one_two_three PASSED                                                                                                                                                                                           [ 60%]
+test_encode.py::test_qwerty PASSED                                                                                                                                                                                                  [ 80%]
+test_encode.py::test_exception PASSED
