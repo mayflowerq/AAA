@@ -9,10 +9,10 @@ def tf_transform(count_matrix):
     return tf_matrix
 
 
-
-
-
-count_matrix = [[1, 1, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1]]
-tf_matrix = tf_transform(count_matrix)
-
-print(tf_matrix)
+if __name__ == '__main__':
+    count_matrix = [[1, 1, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1]]
+    tf_matrix = tf_transform(count_matrix)
+    assert tf_matrix == [[0.143, 0.143, 0.286, 0.143, 0.143,
+                          0.143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.143, 0.0, 0.0, 0.0,
+                                                                 0.143, 0.143, 0.143, 0.143, 0.143, 0.143]]
+    print(tf_matrix)
