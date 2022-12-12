@@ -6,7 +6,6 @@ def idf_transform(count_matrix):
         return []
     idf_vector = []
     all_documents = len(count_matrix)
-
     for term in range(len(count_matrix[0])):
         docs_with_term = 0
         for i in range(all_documents):
@@ -16,6 +15,8 @@ def idf_transform(count_matrix):
     return idf_vector
 
 
-count_matrix = [[1, 1, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1]]
-idf_matrix = idf_transform(count_matrix)
-print(idf_matrix)
+if __name__ == '__main__':
+    count_matrix = [[1, 1, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1]]
+    idf_matrix = idf_transform(count_matrix)
+    assert idf_matrix == [1.4, 1.4, 1.0, 1.4, 1.4, 1.4, 1.4, 1.4, 1.4, 1.4, 1.4, 1.4]
+    print(idf_matrix)
