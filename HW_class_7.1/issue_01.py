@@ -32,41 +32,47 @@ class Advert:
 		self.__dict__ = new_dict
 
 
-lesson_str = """{
-"title": "python",
-"price": 0,
-"location": {
-"address": "город Москва, Лесная, 7",
-"metro_stations": ["Белорусская"]
-}
-}"""
-lesson = json.loads(lesson_str)
-lesson_ad = Advert(lesson)
-print(lesson_ad.location.address)
+if __name__ == '__main__':
+	lesson_str = """{
+	"title": "python",
+	"price": 0,
+	"location": {
+	"address": "город Москва, Лесная, 7",
+	"metro_stations": ["Белорусская"]
+	}
+	}"""
+	lesson = json.loads(lesson_str)
+	lesson_ad = Advert(lesson)
+	assert lesson_ad.location.address == 'город Москва, Лесная, 7'
+	print(lesson_ad.location.address)
 
-dog_str = """{
-"title": "Вельш-корги",
-"price": 1000,
-"class": "dogs"
-}"""
-dog = json.loads(dog_str)
-dog_ad = Advert(dog)
-print(dog_ad.class_)
+	dog_str = """{
+	"title": "Вельш-корги",
+	"price": 1000,
+	"class": "dogs"
+	}"""
+	dog = json.loads(dog_str)
+	dog_ad = Advert(dog)
+	assert dog_ad.class_ == 'dogs'
+	print(dog_ad.class_)
 
-lesson_price_check_str = '{"title": "python", "price": -1}'
-lesson_price_check = json.loads(lesson_price_check_str)
-lesson_price_check_ad = Advert(lesson_price_check)
-print(lesson_price_check_ad.price)
+	lesson_price_check_str = '{"title": "python", "price": -1}'
+	lesson_price_check = json.loads(lesson_price_check_str)
+	lesson_price_check_ad = Advert(lesson_price_check)
+	assert lesson_price_check_ad.price == 'ValueError: must be >= 0'
+	print(lesson_price_check_ad.price)
 
-lesson_price_change_str = '{"title": "python", "price": 1}'
-lesson_price_change = json.loads(lesson_price_change_str)
-lesson_price_change_ad = Advert(lesson_price_change)
-lesson_price_change_str = '{"title": "python", "price": -3}'
-lesson_price_change = json.loads(lesson_price_change_str)
-lesson_price_change_ad = Advert(lesson_price_change)
-print(lesson_price_change_ad.price)
+	lesson_price_change_str = '{"title": "python", "price": 1}'
+	lesson_price_change = json.loads(lesson_price_change_str)
+	lesson_price_change_ad = Advert(lesson_price_change)
+	lesson_price_change_str = '{"title": "python", "price": -3}'
+	lesson_price_change = json.loads(lesson_price_change_str)
+	lesson_price_change_ad = Advert(lesson_price_change)
+	assert lesson_price_change_ad.price == 'ValueError: must be >= 0'
+	print(lesson_price_change_ad.price)
 
-lesson_no_price_str = '{"title": "python"}'
-lesson_no_price = json.loads(lesson_no_price_str)
-lesson_no_price_ad = Advert(lesson_no_price)
-print(lesson_no_price_ad.price)
+	lesson_no_price_str = '{"title": "python"}'
+	lesson_no_price = json.loads(lesson_no_price_str)
+	lesson_no_price_ad = Advert(lesson_no_price)
+	assert lesson_no_price_ad.price == 0
+	print(lesson_no_price_ad.price)
