@@ -45,5 +45,6 @@ class Advert(ColorizeMixin, InitialAdvert):
 	repr_color_code = '32'
 
 
-iphone_ad = Advert({'title': 'iPhone X', 'price': 100})
-print(iphone_ad)
+if __name__ == '__main__':
+	iphone_ad = Advert({'title': 'iPhone X', 'price': 100})
+	print(iphone_ad)
