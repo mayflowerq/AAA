@@ -41,5 +41,10 @@ if __name__ == '__main__':
     ]
     vectorizer = CountVectorizer()
     count_matrix = vectorizer.fit_transform(corpus)
+    assert count_matrix == [[1, 1, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1]], \
+        f'Неправильный вывод'
+    assert vectorizer.get_feature_names() == ['crock', 'pot', 'pasta', 'never', 'boil', 'again', 'pomodoro',
+                                              'fresh', 'ingredients', 'parmesan', 'to', 'taste'],\
+        f'Неправильный вывод'
     print(vectorizer.get_feature_names())
     print(count_matrix)
