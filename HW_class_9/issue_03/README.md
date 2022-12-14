@@ -1,6 +1,3 @@
 Шаги для запуска:
-1) скачать файл one_hot_encoder.py
-2) скачать test_fit_transform_unit.py
-3) поместить их в одну директорию
-4) в консоли выбрать директорию, в которой находятся файлы
-5) для проведения unittest необходимо запустить тест файла test_fit_transform_unit.py через консоль (команды для запуска находятся в файле result.txt)
+1) скачать файлы one_hot_encoder.py, test_fit_transform_unit.py, поместить их в одну директорию
+2) в выбранной директории ввести в консоль python -m unittest -v test_fit_transform_unit.py
