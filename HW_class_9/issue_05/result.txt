@@ -4,29 +4,33 @@ PS C:\Akademia_Avito\Питон\HW_zanyatie_9\issue_05> python -m unittest -v te
 
 
 Результат:
-test_what_is_year_now (test_what_is_year_now_unit.TestWhatIsYearNow) ... ok
+test_format_dmy (test_what_is_year_now_unit.TestWhatIsYearNow) ... ok
+test_format_ymd (test_what_is_year_now_unit.TestWhatIsYearNow) ... ok
+test_invalid_format (test_what_is_year_now_unit.TestWhatIsYearNow) ... ok
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.001s
+Ran 3 tests in 0.003s
 
 OK
 
+
 ДЛЯ ПРОВЕРКИ ПОКРЫТИЯ КОДА ТЕСТАМИ:
 Команды в консоли:
-PS C:\Akademia_Avito\Питон\HW_zanyatie_9\issue_05> python -m pytest --cov  .  --cov-report html  (ДЛЯ HTML ОТЧЕТА)
-PS C:\Akademia_Avito\Питон\HW_zanyatie_9\issue_05> python -m pytest -q test_coverage.py --cov=what_is_year_now
+PS C:\Akademia_Avito\Питон\HW_zanyatie_9\issue_05> python -m pytest -q test_what_is_year_now_unit.py --cov=what_is_year_now
 (ДЛЯ ОТЧЕТА В КОНСОЛИ)
-
+PS C:\Akademia_Avito\Питон\HW_zanyatie_9\issue_05> python -m pytest --cov  .  --cov-report html  (ДЛЯ HTML ОТЧЕТА)
 
 Результат:
-.                                                                                                                                                                                                                                   [100%]
+...                                                                                                                                                                                                                                 [100%]
 
 ---------- coverage: platform win32, python 3.10.0-final-0 -----------
 Name                  Stmts   Miss  Cover
 -----------------------------------------
-what_is_year_now.py      23      6    74%
+what_is_year_now.py      23      3    87%
 -----------------------------------------
-TOTAL                    23      6    74%
+TOTAL                    23      3    87%
+
+3 passed in 0.09s
 
 (ОТЧЕТ В КОНСОЛИ ↑ )
 
