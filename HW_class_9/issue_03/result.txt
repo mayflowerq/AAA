@@ -3,13 +3,16 @@ PS C:\Akademia_Avito\Питон\HW_zanyatie_9\issue-03> python -m unittest -v te
 
 
 Результат:
-test_exception (test_fit_transform_unit.TestFitTransform) ... ok
+test_exception_wrong_input (test_fit_transform_unit.TestFitTransform) ... ok
 test_one_two_three (test_fit_transform_unit.TestFitTransform) ... ok
 test_qwerty (test_fit_transform_unit.TestFitTransform) ... ok
 test_seqw (test_fit_transform_unit.TestFitTransform) ... ok
 test_two (test_fit_transform_unit.TestFitTransform) ... ok
+test_wrong_expectation (test_fit_transform_unit.TestFitTransform) ... Wrong expectation
+ok
 
 ----------------------------------------------------------------------
-Ran 5 tests in 0.002s
+Ran 6 tests in 0.002s
 
 OK
+
