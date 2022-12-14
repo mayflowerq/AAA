@@ -31,10 +31,14 @@ class TestFitTransform(unittest.TestCase):
                     ('Y', [1, 0, 0, 0, 0, 0])]
         self.assertEqual(actual, expected)
 
-    def test_exception(self):
+    def test_wrong_expectation(self):
         actual = fit_transform(['D', 'O', 'G'])
-        expected = [('D', [0, 0, 1]), ('O', [0, 1, 0]), ('G', [1, 0, 0])]
+        expected = [('D', [0, 0, 2]), ('O', [0, 1, 0]), ('G', [1, 0, 0])]
         try:
             self.assertEqual(actual, expected)
         except AssertionError:
-            pass
+            print('Wrong expectation')
+
+    def test_exception_wrong_input(self):
+        with self.assertRaises(TypeError):
+            fit_transform(7)
