@@ -26,7 +26,7 @@ class TestWhatIsYearNow(unittest.TestCase):
 	def test_format_dmy(self, urlopen):
 		mock = MagicMock()
 		mock.read.return_value = '{"$id":"1",' \
-								 '"currentDateTime":"10.10.20220T23:32Z",' \
+								 '"currentDateTime":"10.10.2022T23:32Z",' \
 								 '"utcOffset":"00:00:00",' \
 								 '"isDayLightSavingsTime":false,' \
 								 '"dayOfTheWeek":"Monday",' \
