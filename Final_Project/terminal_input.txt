@@ -1,0 +1,3 @@
+python la_finale.py order pepperoni
+python la_finale.py order pepperoni --delivery
+python la_finale.py menu
