@@ -5,7 +5,7 @@ class CountVectorizer:
     def get_feature_names(self):
         unique_names = []
         for i in corpus:
-            sentence = (i.split())
+            sentence = i.split()
             for word in sentence:
                 if word.lower() not in unique_names:
                     unique_names.append(word.lower())
@@ -13,25 +13,20 @@ class CountVectorizer:
 
     def fit_transform(self, corpus):
         unique_names = self.get_feature_names()
-        final_1 = []
-        final_2 = []
-        first_corpus = corpus[0]
-        second_corpus = corpus[1]
-        first_corpus = first_corpus.split()
-        second_corpus = second_corpus.split()
-        for unique_name in unique_names:
-            counter = 0
-            for name in first_corpus:
-                if unique_name == name.lower():
-                    counter += 1
-            final_1.append(counter)
-        for unique_name in unique_names:
-            counter = 0
-            for name in second_corpus:
-                if unique_name == name.lower():
-                    counter += 1
-            final_2.append(counter)
-        return [final_1, final_2]
+        transformed_matrix = []
+        one_part = []
+        counter = 0
+        for i in corpus:
+            sentence = i.split()
+            for unique_name in unique_names:
+                for name in sentence:
+                    if unique_name == name.lower():
+                        counter += 1
+                one_part.append(counter)
+                counter = 0
+            transformed_matrix.append(one_part)
+            one_part = []
+        return transformed_matrix
 
 
 if __name__ == '__main__':
