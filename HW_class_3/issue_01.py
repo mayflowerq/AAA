@@ -2,6 +2,7 @@ import csv
 
 
 def get_data():
+    """работа с файлом"""
     with open('Corp_summary.csv', 'r', encoding="utf-8") as f:
         data = f.readlines()
     data = [i.strip().split(';') for i in data[1:]]
